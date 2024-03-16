@@ -5,8 +5,8 @@
 #ifndef S24_PRASANGA_TIWARI_SUNAPPLICATION_H
 #define S24_PRASANGA_TIWARI_SUNAPPLICATION_H
 #include "utility.h"
-namespace Sun {
-    class SUN_API SunApplication {
+namespace Ultimate {
+    class ULTIMATE_API UltimateGame {
     public:
         virtual void initialize();
         virtual void OnUpdate();

@@ -2,22 +2,22 @@
 // Created by Prasanga Tiwari on 3/3/24.
 //
 #include "pch.h"
-#include "SunApplication.h"
+#include "UltimateGame.h"
 
-namespace Sun{
+namespace Ultimate{
 
-    void SunApplication::initialize() {
+    void UltimateGame::initialize() {
     }
 
-    void SunApplication::OnUpdate() {
-
-    }
-
-    void SunApplication::ShutDown() {
+    void UltimateGame::OnUpdate() {
 
     }
 
-    void SunApplication::Run() {
+    void UltimateGame::ShutDown() {
+
+    }
+
+    void UltimateGame::Run() {
         initialize();
         while (true){
             OnUpdate();

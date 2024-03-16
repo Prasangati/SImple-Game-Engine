@@ -1,7 +1,7 @@
 #include <iostream>
-#include "sun.h"
+#include "Ultimate.h"
 #include <iostream>
-class MyGame: public Sun::SunApplication{
+class MyGame: public Ultimate::UltimateGame{
     void initialize() override{
     }
     void OnUpdate() override {
