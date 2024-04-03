@@ -1,37 +1,11 @@
-
-
-
 cmake_minimum_required(VERSION 3.27)
 project(Ultimate_Game_Engine)
 
 set(CMAKE_CXX_STANDARD 20) # Adjust as needed
-
-
-# Add the SUN_EXPORTS definition for this library
-#add_compile_definitions($<TARGET_PROPERTY:NAME>_EXPORTS)
-
-# Define the dynamic library with all necessary source files
-#add_library(Ultimate_Game_Engine SHARED
-#   src/pch.cpp
-#   src/UltimateGame.cpp # Add other source files here
-#)
-
-# Specify where to find the public headers
-#target_include_directories(Ultimate_Game_Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-# Setup precompiled header
-#target_precompile_headers(Ultimate_Game_Engine PRIVATE src/pch.h)
-
-
-
-
-
-
-
 set(HEADER_FILES
-    src/UltimateGame.h,
-        src/Utility.h,
         include/Ultimate.h
+    src/UltimateGame.h,
+        src/Utility.h
 )
 
 set (SOURCE_FILES
@@ -47,8 +21,12 @@ target_compile_definitions(Ultimate_Game_Engine
             ULTIMATE_EXPORTS
 )
 
+
+if(MSVC)
+    target_compile_definitions(Ultimate_Game_Engine PRIVATE ULTIMATE_EXPORTS)
+elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_definitions(Ultimate_Game_Engine PRIVATE ULTIMATE_EXPORTS)
+endif()
+
 target_precompile_headers(Ultimate_Game_Engine PRIVATE src/pch.h)
-
-
-
 
