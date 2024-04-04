@@ -9,7 +9,15 @@
 namespace Ultimate {
 
     class WindowGLFW : public WindowImpl {
+    public:
+        WindowGLW();
+        virtual void Create(int width, int height) override;
+        virtual int GetWidth() const override;
+        virtual int GetHeight() const override;
+        ~WindowGLW();
 
+    private:
+        GLFWwindow* mWindow(nullptr);
     };
 
 } // Ultimate
