@@ -39,6 +39,7 @@ target_include_directories(Ultimate_Game_Engine
         ${PROJECT_SOURCE_DIR}/include
         PRIVATE
         ${PROJECT_SOURCE_DIR}/src
+        ${PROJECT_SOURCE_DIR}/glfw/include  # Explicitly including GLFW's include directory
 )
 
 # Precompiled header setup
