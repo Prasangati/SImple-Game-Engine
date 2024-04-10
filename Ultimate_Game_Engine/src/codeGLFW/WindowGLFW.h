@@ -5,7 +5,7 @@
 #ifndef S24_PRASANGA_TIWARI_WINDOWGLFW_H
 #define S24_PRASANGA_TIWARI_WINDOWGLFW_H
 #include "../WindowImpl.h"
-
+#include "GLFW/glfw3.h"
 namespace Ultimate {
 
     class WindowGLFW : public WindowImpl {
