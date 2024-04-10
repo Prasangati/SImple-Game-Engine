@@ -8,5 +8,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Assuming the Ultimate_Game_Engine library target is named "Ultimate_Game_Engine", link it with the executable
 include_directories("../Ultimate_Game_Engine/include")
 # Add the main executable
-add_executable(Game source.cpp)
+add_executable(S24_Prasanga_Tiwari source.cpp)
 

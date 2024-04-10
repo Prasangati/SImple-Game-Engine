@@ -36,10 +36,10 @@ add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES})
 # Set include directories
 target_include_directories(Ultimate_Game_Engine
         PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/Ultimate_Game_Engine/include
         PRIVATE
-        ${PROJECT_SOURCE_DIR}/src
-        ${PROJECT_SOURCE_DIR}/glfw/include  # Explicitly including GLFW's include directory
+        ${PROJECT_SOURCE_DIR}/Ultimate_Game_Engine/src
+        ${PROJECT_SOURCE_DIR}/glfw/include  # Correctly including GLFW's include directory
 )
 
 # Precompiled header setup
