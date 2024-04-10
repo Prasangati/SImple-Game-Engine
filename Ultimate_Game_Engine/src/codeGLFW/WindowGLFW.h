@@ -17,7 +17,7 @@ namespace Ultimate {
         ~WindowGLFW();
 
     private:
-        //GLFWwindow* mWindow(nullptr);
+        GLFWwindow* mWindow(nullptr);
     };
 
 } // Ultimate
