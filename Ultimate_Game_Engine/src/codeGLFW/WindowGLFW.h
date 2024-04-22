@@ -15,9 +15,8 @@ namespace Ultimate {
         virtual int GetWidth() const override;
         virtual int GetHeight() const override;
         ~WindowGLFW();
-
     private:
-        GLFWwindow* mWindow(nullptr);
+        GLFWwindow* mWindow{nullptr};
     };
 
 } // Ultimate
