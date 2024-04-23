@@ -8,10 +8,9 @@
 namespace Ultimate {
     class ULTIMATE_API UltimateGame {
     public:
-        virtual void initialize();
+        virtual void Initialize();
         virtual void OnUpdate();
         virtual void ShutDown();
-
         void Run();
     private:
 

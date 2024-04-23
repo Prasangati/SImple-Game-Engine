@@ -15,13 +15,19 @@ namespace Ultimate {
     }
 
     void WindowGLFW::Create(int width, int height) {
-        mWindow = glfwCreateWindow(width,height,"TheUltimateGame",NULL,NULL);
+        mWindow = glfwCreateWindow(width,height,"MyGame",NULL,NULL);
         assert(mWindow != NULL);
     }
 
     int WindowGLFW::GetWidth() const {
         int width, height;
         glfwGetWindowSize(mWindow,&width,&height);
+        return width;
+    }
+    int WindowGLFW::GetHeight() const {
+        int width, height;
+        glfwGetWindowSize(mWindow, &width, &height);
+        return height;  // Return the height
     }
 
     WindowGLFW::~WindowGLFW() {

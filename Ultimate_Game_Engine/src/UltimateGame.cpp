@@ -6,7 +6,7 @@
 
 namespace Ultimate{
 
-    void UltimateGame::initialize() {
+    void UltimateGame::Initialize() {
     }
 
     void UltimateGame::OnUpdate() {
@@ -18,7 +18,7 @@ namespace Ultimate{
     }
 
     void UltimateGame::Run() {
-        initialize();
+        Initialize();
         while (true){
             OnUpdate();
         }

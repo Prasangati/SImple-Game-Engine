@@ -9,11 +9,12 @@
 namespace Ultimate{
     class ULTIMATE_API UltimateWindow{
     public:
+        UltimateWindow();
         void Create(int width, int height);
         int GetWidth() const;
         int GetHeight() const;
     private:
-        WindowImpl* myWindow{nullptr};
+        WindowImpl* mWindow{nullptr};
     };
 
 }

@@ -1,16 +1,24 @@
 cmake_minimum_required(VERSION 3.27)
-project(Prasanga_GAME VERSION 1.0 DESCRIPTION "Dynamic Library that is used by the game")
+project(Prasanga_GAME VERSION 1.0 DESCRIPTION "Dynamic Library and Application")
 
-set(CMAKE_CXX_STANDARD 20) # Using C++20 for this project
+# Set the C++ standard for the whole project
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-# Optionally set global compiler options or definitions here
-# Include subprojects or subdirectories
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
+# Set a global output directory for all binaries
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# Include the GLFW directory
 add_subdirectory(glfw)
-message(STATUS "GLFW include directory: ${PROJECT_SOURCE_DIR}/glfw/include")
 
+# Include the Ultimate Game Engine library
 add_subdirectory(Ultimate_Game_Engine)
+
+# Include the application that uses the library
 add_subdirectory(S24_Prasanga_Tiwari)
 
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT S24_Prasanga_Tiwari_App)
+# Optional: Set up the default startup project for Visual Studio
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT S24_Prasanga_Tiwari)
+
+# Optional: Display a message with the GLFW include directory for debugging purposes
+message(STATUS "GLFW include directory: ${PROJECT_SOURCE_DIR}/glfw/include")

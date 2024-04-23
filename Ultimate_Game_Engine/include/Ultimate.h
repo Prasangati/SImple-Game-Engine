@@ -6,5 +6,6 @@
 #define S24_PRASANGA_TIWARI_SOLUTION_SUN_H
 #include "../src/utility.h"
 #include "../src/UltimateGame.h"
+#include "../src/UltimateWindow.h"
 
 #endif //S24_PRASANGA_TIWARI_SOLUTION_SUN_H
