@@ -13,6 +13,8 @@ namespace Ultimate{
         void Create(int width, int height);
         int GetWidth() const;
         int GetHeight() const;
+        bool IsValid() const;
+        void glfeveninfo()const;
     private:
         WindowImpl* mWindow{nullptr};
     };

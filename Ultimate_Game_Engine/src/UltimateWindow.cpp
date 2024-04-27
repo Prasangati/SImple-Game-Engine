@@ -18,6 +18,15 @@ namespace Ultimate {
         mWindow->Create(width, height);
     }
 
+    void UltimateWindow::glfeveninfo()const{
+        mWindow->glfeveninfo();
+    }
+
+
+    bool UltimateWindow::IsValid() const {
+        return mWindow-> IsValid();
+    }
+
     int UltimateWindow::GetHeight() const {
         return mWindow->GetHeight();
     }

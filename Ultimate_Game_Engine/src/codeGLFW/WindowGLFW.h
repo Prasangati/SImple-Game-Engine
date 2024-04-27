@@ -14,6 +14,8 @@ namespace Ultimate {
         virtual void Create(int width, int height) override;
         virtual int GetWidth() const override;
         virtual int GetHeight() const override;
+        virtual bool IsValid() const override;
+        virtual void glfeveninfo() const override;
         ~WindowGLFW();
     private:
         GLFWwindow* mWindow{nullptr};
