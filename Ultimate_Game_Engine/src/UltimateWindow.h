@@ -9,14 +9,19 @@
 namespace Ultimate{
     class ULTIMATE_API UltimateWindow{
     public:
-        UltimateWindow();
+        static void Init();
+        static UltimateWindow* GetWindow();
+        static void Shutdown();
+
         void Create(int width, int height);
         int GetWidth() const;
         int GetHeight() const;
         bool IsValid() const;
         void glfeveninfo()const;
     private:
-        WindowImpl* mWindow{nullptr};
+        UltimateWindow();
+        inline static UltimateWindow* mInstance{nullptr};
+        std::unique_ptr<WindowImpl> mWindow{nullptr};
     };
 
 }

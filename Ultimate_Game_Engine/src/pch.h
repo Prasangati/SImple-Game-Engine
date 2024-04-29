@@ -5,7 +5,7 @@
 #include <string>
 #include<chrono>
 #include<cassert>
+#include <memory>
 
-void hello();
 
 #endif //PCP_LIBRARY_H

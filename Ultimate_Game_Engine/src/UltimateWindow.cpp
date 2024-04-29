@@ -8,7 +8,7 @@
 namespace Ultimate {
     UltimateWindow::UltimateWindow() {
         #ifdef ULTIMATE_GLFW_WINDOW
-        mWindow = new WindowGLFW;  // Ensure correct member variable is used
+        mWindow = std::unique_ptr<WindowImpl>{new WindowGLFW};  // Ensure correct member variable is used
         #else
         #error "GLFW window implementation is missing"
         #endif
@@ -33,5 +33,19 @@ namespace Ultimate {
 
     int UltimateWindow::GetWidth() const {
         return mWindow->GetWidth();
+    }
+
+    void UltimateWindow::Init() {
+        if (!mInstance)
+            mInstance = new UltimateWindow;
+    }
+
+    UltimateWindow *UltimateWindow::GetWindow() {
+        return mInstance;
+    }
+
+    void UltimateWindow::Shutdown() {
+        if (mInstance)
+            delete mInstance;
     }
 }

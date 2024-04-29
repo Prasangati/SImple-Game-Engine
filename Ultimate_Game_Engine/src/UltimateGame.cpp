@@ -3,7 +3,7 @@
 //
 #include "pch.h"
 #include "UltimateGame.h"
-
+#include "UltimateWindow.h"
 namespace Ultimate{
 
     void UltimateGame::Initialize() {
@@ -18,10 +18,11 @@ namespace Ultimate{
     }
 
     void UltimateGame::Run() {
+        UltimateWindow::Init();
         Initialize();
         while (true){
             OnUpdate();
         }
-        ShutDown();
+        UltimateWindow::Shutdown();
     }
 }
