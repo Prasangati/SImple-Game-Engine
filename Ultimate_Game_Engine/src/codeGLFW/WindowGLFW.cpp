@@ -33,6 +33,14 @@ namespace Ultimate {
         std::cout << "Window created and context made current.\n";
     }
 
+    void WindowGLFW::SwapBuffers() {
+        glfwSwapBuffers(mWindow);
+    }
+
+    void WindowGLFW::PollEvents() {
+        glfwPollEvents();
+    }
+
     bool WindowGLFW::IsValid() const {
         return mWindow != nullptr;
     }

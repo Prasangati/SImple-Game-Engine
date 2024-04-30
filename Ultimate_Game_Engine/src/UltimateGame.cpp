@@ -23,6 +23,8 @@ namespace Ultimate{
         Initialize();
         while (true){
             OnUpdate();
+            UltimateWindow::GetWindow()->SwapBuffers();
+            UltimateWindow::GetWindow()->SwapBuffers();
         }
         UltimateWindow::Shutdown();
     }

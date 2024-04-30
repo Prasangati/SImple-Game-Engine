@@ -9,7 +9,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SOURCE_FILES
         src/UltimateGame.cpp
         src/UltimateWindow.cpp
-        src/WindowImpl.cpp
         src/codeGLFW/WindowGLFW.cpp
         # Using precompiled headers
 )

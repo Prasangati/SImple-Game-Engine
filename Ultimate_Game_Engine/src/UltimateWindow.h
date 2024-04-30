@@ -14,6 +14,8 @@ namespace Ultimate{
         static UltimateWindow* GetWindow();
         static void Shutdown();
 
+        void SwapBuffers();
+        void PollEvents();
         void Create(int width, int height);
         int GetWidth() const;
         int GetHeight() const;

@@ -48,4 +48,12 @@ namespace Ultimate {
         if (mInstance)
             delete mInstance;
     }
+
+    void UltimateWindow::SwapBuffers() {
+        mWindow->SwapBuffers();
+    }
+
+    void UltimateWindow::PollEvents() {
+        mWindow->PollEvents();
+    }
 }
