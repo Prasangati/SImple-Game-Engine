@@ -19,6 +19,7 @@ namespace Ultimate{
 
     void UltimateGame::Run() {
         UltimateWindow::Init();
+        UltimateWindow::GetWindow()->Create(1000, 800);
         Initialize();
         while (true){
             OnUpdate();

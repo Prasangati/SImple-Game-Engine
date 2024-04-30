@@ -6,6 +6,7 @@
 #define S24_PRASANGA_TIWARI_ULTIMATEWINDOW_H
 #include "WindowImpl.h"
 #include "utility.h"
+#include "pch.h"
 namespace Ultimate{
     class ULTIMATE_API UltimateWindow{
     public:

@@ -11,7 +11,7 @@ set(SOURCE_FILES
         src/UltimateWindow.cpp
         src/WindowImpl.cpp
         src/codeGLFW/WindowGLFW.cpp
-        src/pch.cpp  # Using precompiled headers
+        # Using precompiled headers
 )
 
 set(HEADER_FILES
