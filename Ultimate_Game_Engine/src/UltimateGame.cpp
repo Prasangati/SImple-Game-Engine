@@ -118,6 +118,32 @@ namespace Ultimate{
         glLinkProgram(shaderProgram);
 // check for linking errors
         glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+        if (!success)
+        {
+            glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+            ULTIMATE_ERROR("ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog);
+        }
+        glDeleteShader(vertexShader);
+        glDeleteShader(fragmentShader);
+
+        ////// Texture /////
+        unsigned int texture;
+        glGenTextures(1,&texture);
+        glBindTexture(GL_TEXTURE_2D, texture);
+
+        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        int width, height, nrChannels;
+        stbi_set_flip_vertically_on_load(true);
+        unsigned char* data = stbi_load()
+
+
+
+
+
 
 
 
