@@ -5,6 +5,8 @@
 #include "UltimateGame.h"
 #include "UltimateWindow.h"
 #include "GLFW/glfw3.h"
+#include <glad/glad.h>
+
 
 namespace Ultimate{
 
@@ -131,31 +133,43 @@ namespace Ultimate{
         glGenTextures(1,&texture);
         glBindTexture(GL_TEXTURE_2D, texture);
 
-        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTextParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
         int width, height, nrChannels;
         stbi_set_flip_vertically_on_load(true);
-        unsigned char* data = stbi_load()
+        unsigned char* data = stbi_load("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.png");
 
+        if (data){
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+            glGenerateMipmap(GL_TEXTURE_2D);
+        }
+        else{
+            ULTIMATE_ERROR("Failed to load texture" << std::endl);
+        }
+        stbi_image_free(data);
 
+        Initialize();
 
+        while (true){
+            OnUpdate();
 
+            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            glClear(GL_COLOR_BUFFER_BIT);
 
+            //draw our first triangle
+            glUseProgram(shaderProgram);
+            glBindVertexArray(VAO);
+            glBindTexture(GL_TEXTURE_2D, texture);
+            glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-
-
-
-
-
-
-
-
-
-
-
+            UltimateWindow::GetWindow()->SwapBuffers();
+            UltimateWindow::GetWindow()->PollEvents();
+        }
+        ShutDown();
+        UltimateWindow::Shutdown();
 
     }
 

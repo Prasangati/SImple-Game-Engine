@@ -33,6 +33,7 @@ target_include_directories(Ultimate_Game_Engine
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/../glfw/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../glad/include
 )
 
 # Definitions for controlling visibility and imports/exports
@@ -44,7 +45,7 @@ target_compile_definitions(Ultimate_Game_Engine PRIVATE
 )
 
 # Link against GLFW and potentially other libraries
-target_link_libraries(Ultimate_Game_Engine PRIVATE glfw)
+target_link_libraries(Ultimate_Game_Engine PRIVATE glfw glad)
 
 # Compiler-specific options
 if(MSVC)

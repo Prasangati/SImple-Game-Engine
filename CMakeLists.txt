@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Set a global output directory for all binaries
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+
+# Include the glad library
+add_subdirectory(glad)
+
 # Include the GLFW directory
 add_subdirectory(glfw)
 
