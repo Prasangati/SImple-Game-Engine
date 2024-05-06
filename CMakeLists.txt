@@ -12,6 +12,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Include the glad library
 add_subdirectory(glad)
 
+# Include the stbi
+add_subdirectory(stbi)
+
 # Include the GLFW directory
 add_subdirectory(glfw)
 
@@ -26,3 +29,5 @@ set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT S
 
 # Optional: Display a message with the GLFW include directory for debugging purposes
 message(STATUS "GLFW include directory: ${PROJECT_SOURCE_DIR}/glfw/include")
+message(STATUS "STB Image include directory: ${PROJECT_SOURCE_DIR}/stbi/include")
+message(STATUS "GLAD include directory: ${PROJECT_SOURCE_DIR}/glad/include")

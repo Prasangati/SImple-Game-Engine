@@ -24,7 +24,8 @@ set(HEADER_FILES
 )
 
 # Define the Ultimate_Game_Engine as a shared library
-add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES})
+add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES}
+        )
 
 # Specify the directories where the compiler should look for headers
 target_include_directories(Ultimate_Game_Engine
@@ -34,6 +35,7 @@ target_include_directories(Ultimate_Game_Engine
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/../glfw/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../glad/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../stbi/include
 )
 
 # Definitions for controlling visibility and imports/exports
@@ -45,7 +47,7 @@ target_compile_definitions(Ultimate_Game_Engine PRIVATE
 )
 
 # Link against GLFW and potentially other libraries
-target_link_libraries(Ultimate_Game_Engine PRIVATE glfw glad)
+target_link_libraries(Ultimate_Game_Engine PRIVATE glfw glad stbi)
 
 # Compiler-specific options
 if(MSVC)
