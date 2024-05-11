@@ -4,9 +4,10 @@
 #include "pch.h"
 #include "UltimateGame.h"
 #include "UltimateWindow.h"
-#include <glad/glad.h>
+#include "glad/glad.h"
 #include "GLFW/glfw3.h"
-#include "stb_image.h"
+
+#include <stb_image.h>
 
 
 namespace Ultimate{
@@ -27,30 +28,29 @@ namespace Ultimate{
         UltimateWindow::GetWindow()->Create(1000, 800);
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         {
-            ULTIMATE_ERROR("Failed to initialized GLAD");
+            ULTIMATE_ERROR("Failed to initialize GLAD");
             return;
         }
 
-        ///Blending///
+        /// Blending ///
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         /// Vertex Data ///
-
         unsigned int VBO, VAO;
         glGenVertexArrays(1, &VAO);
         glBindVertexArray(VAO);
 
         float vertices[] = {
-            -0.5f, -0.5f, 0.0, 0.0,
-            0.5f, -0.5f, 1.0, 0.0,
-            -0.5f, 0.5f, 0.0, 1.0,
-            0.5f, 0.5f, 1.0, 1.0
+                -0.5f, -0.5f, 0.0, 0.0,
+                0.5f, -0.5f, 1.0, 0.0,
+                -0.5f, 0.5f, 0.0, 1.0,
+                0.5f, 0.5f, 1.0, 1.0
         };
 
         unsigned int indices[] = {
-            0, 1, 2,
-            1, 2, 3
+                0, 1, 2,
+                1, 2, 3
         };
 
         glGenBuffers(1, &VBO);
@@ -60,39 +60,42 @@ namespace Ultimate{
         glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
         glEnableVertexAttribArray(0);
 
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2* sizeof(float)));
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
         glEnableVertexAttribArray(1);
 
         unsigned int EBO;
         glGenBuffers(1, &EBO);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
         const char* vertexShaderSource = R"(
-            #version 330 core
-            layout (location = 0) in vec2 aPos;
-            layout (location = 1) in vec2 aTexCoord;
+        #version 330 core
+        layout (location = 0) in vec2 aPos;
+        layout (location = 1) in vec2 aTexCoord;
 
-            void main()
-            {
-                gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
-                TexCoord = aTexCoord;
-            }
-            )";
+        out vec2 TexCoord;
+
+        void main()
+        {
+            gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
+            TexCoord = aTexCoord;
+        }
+    )";
 
         const char* fragmentShaderSource = R"(
-            #version 330 core
-            out vec4 FragColor;
+        #version 330 core
+        out vec4 FragColor;
 
-            in vec2 TexCoord;
+        in vec2 TexCoord;
 
-            uniform sampler2D myTex;
+        uniform sampler2D myTex;
 
-            void main()
-            {
-                FragColor = texture(myTex, TexCoord);
-            }
-            )";
+        void main()
+        {
+            FragColor = texture(myTex, TexCoord);
+        }
+    )";
+
         unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
         glCompileShader(vertexShader);
@@ -119,7 +122,7 @@ namespace Ultimate{
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);
         glLinkProgram(shaderProgram);
-// check for linking errors
+        // Check for linking errors
         glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
         if (!success)
         {
@@ -131,7 +134,7 @@ namespace Ultimate{
 
         ////// Texture /////
         unsigned int texture;
-        glGenTextures(1,&texture);
+        glGenTextures(1, &texture);
         glBindTexture(GL_TEXTURE_2D, texture);
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -141,29 +144,32 @@ namespace Ultimate{
 
         int width, height, nrChannels;
         stbi_set_flip_vertically_on_load(true);
-        unsigned char* data = stbi_load("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.png", &width, &height, &nrChannels, 0);
+        unsigned char* data = stbi_load("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/Test.png", &width, &height, &nrChannels, 0);
 
-        if (data){
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
+
+        if (data) {
+            glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
             glGenerateMipmap(GL_TEXTURE_2D);
-        }
-        else{
+        } else {
             ULTIMATE_ERROR("Failed to load texture" << std::endl);
         }
         stbi_image_free(data);
 
         Initialize();
 
-        while (true){
+        while (true) {
             OnUpdate();
 
             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            //draw our first triangle
             glUseProgram(shaderProgram);
-            glBindVertexArray(VAO);
+            glUniform1i(glGetUniformLocation(shaderProgram, "myTex"), 0);
+            glActiveTexture(GL_TEXTURE0);
             glBindTexture(GL_TEXTURE_2D, texture);
+
+            glBindVertexArray(VAO);
             glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
             UltimateWindow::GetWindow()->SwapBuffers();
@@ -171,7 +177,8 @@ namespace Ultimate{
         }
         ShutDown();
         UltimateWindow::Shutdown();
-
     }
+
+
 
 }
