@@ -10,6 +10,7 @@ set(SOURCE_FILES
         src/UltimateGame.cpp
         src/UltimateWindow.cpp
         src/codeGLFW/WindowGLFW.cpp
+        src/Image.cpp
         # Using precompiled headers
 )
 
@@ -21,6 +22,9 @@ set(HEADER_FILES
         src/WindowImpl.h
         src/codeGLFW/WindowGLFW.h
         src/pch.h
+        src/Image.h
+        src/ImageImplement.h
+        src/codeOpenGL/ImageOpenGl.h
 )
 
 # Define the Ultimate_Game_Engine as a shared library
@@ -40,6 +44,7 @@ target_include_directories(Ultimate_Game_Engine
 
 # Definitions for controlling visibility and imports/exports
 target_compile_definitions(Ultimate_Game_Engine PRIVATE
+        ULTIMATE_OPENGL
         ULTIMATE_EXPORTS
         ULTIMATE_GLFW_WINDOW  # Define this to enable GLFW window implementation
         $<$<CONFIG:Debug>:ULTIMATE_DEBUG=2>
