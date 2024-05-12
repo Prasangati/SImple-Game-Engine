@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-project(Ultimate_Game_Engine)
+project(Ultimate_Game_Engine CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -11,12 +11,14 @@ set(SOURCE_FILES
         src/UltimateWindow.cpp
         src/codeGLFW/WindowGLFW.cpp
         src/Image.cpp
+
         # Using precompiled headers
 )
 
 set(HEADER_FILES
         include/Ultimate.h
         src/UltimateGame.h
+        src/codeGLFW/WindowGLFW.h
         src/Utility.h
         src/UltimateWindow.h
         src/WindowImpl.h
@@ -24,7 +26,9 @@ set(HEADER_FILES
         src/pch.h
         src/Image.h
         src/ImageImplement.h
-        src/codeOpenGL/ImageOpenGl.h
+        src/codeOpenGL/ImageOpenGL.cpp
+        src/Shader.cpp
+        src/Shader.h
 )
 
 # Define the Ultimate_Game_Engine as a shared library

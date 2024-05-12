@@ -3,10 +3,11 @@
 //
 #include "pch.h"
 #include "Image.h"
+#include"codeOpenGL/ImageOpenGL.h"
 namespace Ultimate{
     Image::Image(const std::string &filepath) {
 #ifdef ULTIMATE_OPENGL
-        mImplementation = std::unique_ptr{ new ImageOpenGl{filePath}};
+        mImplementation = std::unique_ptr<ImageImplement>{ new ImageOpenGL{filepath}};
 #else
         #error "only openGl is supoorted so far"
 #endif
@@ -14,7 +15,7 @@ namespace Ultimate{
 
     Image::Image(std::string &&filepath) {
 #ifdef ULTIMATE_OPENGL
-        mImplementation = std::unique_ptr{ new ImageOpenGl{std::move(filePath)}};
+        mImplementation = std::unique_ptr<ImageImplement>{ new ImageOpenGL{std::move(filepath)}};
 #else
 #error "only openGl is supoorted so far"
 #endif
