@@ -1,7 +1,7 @@
 //
 // Created by Prasanga Tiwari on 5/11/24.
 //
-#include "../pch.h"
+#include "pch.h"
 #include "glad/glad.h"
 #include "stb_image.h"
 #include "utility.h"

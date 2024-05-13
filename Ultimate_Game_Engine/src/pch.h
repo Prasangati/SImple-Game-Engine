@@ -6,6 +6,6 @@
 #include<chrono>
 #include<cassert>
 #include <memory>
-
+#include <fstream>
 
 #endif //PCP_LIBRARY_H

@@ -2,8 +2,9 @@
 // Created by Prasanga Tiwari on 4/3/24.
 //
 
+
+#include "pch.h"
 #include "WindowGLFW.h"
-#include "../pch.h"
 
 namespace Ultimate {
     WindowGLFW::WindowGLFW() {
@@ -17,7 +18,6 @@ namespace Ultimate {
     }
 
     void WindowGLFW::Create(int width, int height) {
-        glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);

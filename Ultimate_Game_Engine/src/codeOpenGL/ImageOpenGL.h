@@ -4,7 +4,7 @@
 
 #ifndef YOURPROJECTNAME_IMAGEOPENGL_H
 #define YOURPROJECTNAME_IMAGEOPENGL_H
-#include "../pch.h"
+#include "pch.h"
 #include "../ImageImplement.h"
 
 namespace Ultimate{

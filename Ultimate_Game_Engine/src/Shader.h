@@ -6,7 +6,7 @@
 #define YOURPROJECTNAME_SHADER_H
 #include "pch.h"
 #include "utility.h"
-
+#include "ShaderImplement.h"
 namespace Ultimate {
     class Shader {
     public:

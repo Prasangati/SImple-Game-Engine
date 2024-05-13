@@ -11,8 +11,8 @@ set(SOURCE_FILES
         src/UltimateWindow.cpp
         src/codeGLFW/WindowGLFW.cpp
         src/Image.cpp
-
-        # Using precompiled headers
+        src/ShaderImplement.cpp
+        src/ShaderImplement.h
 )
 
 set(HEADER_FILES
@@ -29,11 +29,14 @@ set(HEADER_FILES
         src/codeOpenGL/ImageOpenGL.cpp
         src/Shader.cpp
         src/Shader.h
+        src/ShaderImplement.cpp
+        src/ShaderImplement.h
+        src/codeOpenGL/ShaderOpenGL.h
+        src/codeOpenGL/ShaderOpenGL.cpp
 )
 
 # Define the Ultimate_Game_Engine as a shared library
-add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES}
-        )
+add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES})
 
 # Specify the directories where the compiler should look for headers
 target_include_directories(Ultimate_Game_Engine
@@ -45,6 +48,9 @@ target_include_directories(Ultimate_Game_Engine
         ${CMAKE_CURRENT_SOURCE_DIR}/../glad/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../stbi/include
 )
+
+# Enable precompiled headers
+target_precompile_headers(Ultimate_Game_Engine PRIVATE src/pch.h)
 
 # Definitions for controlling visibility and imports/exports
 target_compile_definitions(Ultimate_Game_Engine PRIVATE
