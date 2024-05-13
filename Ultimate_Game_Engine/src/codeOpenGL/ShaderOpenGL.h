@@ -11,10 +11,12 @@ namespace Ultimate{
     public:
         ShaderOpenGL(const std::string& vertexFile, const std::string& fragmentFile);
         ShaderOpenGL(std::string&& vertexFile, std::string&& fragmentFile);
-
+        virtual void SetUniform2Ints(const std::string& uniformName, int val1, int val2) override;
+        virtual void SetUniform2Ints(std::string&& uniformName, int val1, int val2) override;
+        ~ShaderOpenGL();
         virtual void Bind() override;
     private:
-        unsigned int mShaderprog{0};
+        unsigned int mShaderProg{0};
         std::string ReadFile(const std::string& fileName);
         std::string ReadFile(std::string&& fileName);
     };
