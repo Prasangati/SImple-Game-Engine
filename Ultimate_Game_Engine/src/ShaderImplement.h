@@ -6,7 +6,7 @@
 #define SHADERIMPLEMENT_H
 
 
-namespace{
+namespace Ultimate{
 class ShaderImplement {
 public:
     virtual void Bind()=0;

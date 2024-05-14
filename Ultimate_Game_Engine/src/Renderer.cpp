@@ -3,6 +3,7 @@
 //
 #include "pch.h"
 #include "Renderer.h"
+#include "codeOpenGL/RendererOpenGL.h"
 namespace Ultimate{
 
     void Renderer::Draw(Image &pic, int x, int y) {
@@ -19,7 +20,13 @@ namespace Ultimate{
         return mInstance;
     }
 
-    Renderer::Renderer() {
+    void Renderer::Draw(Image &pic, Shader &shader, int x, int y) {
+        mInstance->mImplementation->Draw(pic, shader, x, y);
+    }
+
+    void Renderer::ClearScreen() {
+        mInstance->mImplementation->ClearScreen();
 
     }
+
 }

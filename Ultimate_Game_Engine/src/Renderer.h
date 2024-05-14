@@ -7,6 +7,7 @@
 #include "pch.h"
 #include "utility.h"
 #include "Image.h"
+#include "RendererImplement.h"
 namespace Ultimate {
     class Renderer {
     public:
@@ -14,6 +15,8 @@ namespace Ultimate {
         static Renderer* GetInstance();
 
         static void Draw(Image& pic, int x, int y);
+        static void Draw(Image& pic, Shader& shader,int x, int y);
+        static void ClearScreen();
     private:
         std::unique_ptr<RendererImplement> mImplementation;
         Renderer();

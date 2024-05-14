@@ -796,14 +796,6 @@ build Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Image.cpp.o: 
   OBJECT_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir
   OBJECT_FILE_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src
 
-build Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/ShaderImplement.cpp.o: CXX_COMPILER__Ultimate_Game_Engine_unscanned_Debug /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/src/ShaderImplement.cpp | Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_Ultimate_Game_Engine
-  DEFINES = -DULTIMATE_DEBUG=2 -DULTIMATE_EXPORTS -DULTIMATE_GLFW_WINDOW -DULTIMATE_OPENGL -DUltimate_Game_Engine_EXPORTS
-  DEP_FILE = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/ShaderImplement.cpp.o.d
-  FLAGS = -fcoverage-mapping -fprofile-instr-generate -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Winvalid-pch -Xarch_arm64 -include/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx
-  INCLUDES = -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/src -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/../glfw/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/../glad/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/../stbi/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/glfw/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/glad/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/stbi/include
-  OBJECT_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir
-  OBJECT_FILE_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src
-
 build Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o: CXX_COMPILER__Ultimate_Game_Engine_unscanned_Debug /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/src/Shader.cpp | Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_Ultimate_Game_Engine
   DEFINES = -DULTIMATE_DEBUG=2 -DULTIMATE_EXPORTS -DULTIMATE_GLFW_WINDOW -DULTIMATE_OPENGL -DUltimate_Game_Engine_EXPORTS
   DEP_FILE = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o.d
@@ -836,6 +828,14 @@ build Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Renderer.cpp.
   OBJECT_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir
   OBJECT_FILE_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src
 
+build Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/RendererOpenGL.cpp.o: CXX_COMPILER__Ultimate_Game_Engine_unscanned_Debug /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/src/codeOpenGL/RendererOpenGL.cpp | Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx.pch || cmake_object_order_depends_target_Ultimate_Game_Engine
+  DEFINES = -DULTIMATE_DEBUG=2 -DULTIMATE_EXPORTS -DULTIMATE_GLFW_WINDOW -DULTIMATE_OPENGL -DUltimate_Game_Engine_EXPORTS
+  DEP_FILE = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/RendererOpenGL.cpp.o.d
+  FLAGS = -fcoverage-mapping -fprofile-instr-generate -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fPIC -fcolor-diagnostics -Wall -Wextra -Winvalid-pch -Xarch_arm64 -include/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx
+  INCLUDES = -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/src -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/../glfw/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/../glad/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/../stbi/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/glfw/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/glad/include -I/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/stbi/include
+  OBJECT_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir
+  OBJECT_FILE_DIR = Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL
+
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target Ultimate_Game_Engine
@@ -844,7 +844,7 @@ build Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Renderer.cpp.
 #############################################
 # Link the shared library Ultimate_Game_Engine/libUltimate_Game_Engine.dylib
 
-build Ultimate_Game_Engine/libUltimate_Game_Engine.dylib: CXX_SHARED_LIBRARY_LINKER__Ultimate_Game_Engine_Debug Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateGame.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateWindow.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeGLFW/WindowGLFW.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Image.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/ShaderImplement.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ShaderOpenGL.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ImageOpenGL.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Renderer.cpp.o | glfw/src/libglfw3.a glad/libglad.a stbi/libstbi.a || glad/libglad.a glfw/src/libglfw3.a stbi/libstbi.a
+build Ultimate_Game_Engine/libUltimate_Game_Engine.dylib: CXX_SHARED_LIBRARY_LINKER__Ultimate_Game_Engine_Debug Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateGame.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateWindow.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeGLFW/WindowGLFW.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Image.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ShaderOpenGL.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ImageOpenGL.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Renderer.cpp.o Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/RendererOpenGL.cpp.o | glfw/src/libglfw3.a glad/libglad.a stbi/libstbi.a || glad/libglad.a glfw/src/libglfw3.a stbi/libstbi.a
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -fcoverage-mapping -fprofile-instr-generate -g
