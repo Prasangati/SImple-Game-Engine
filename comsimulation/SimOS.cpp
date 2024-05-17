@@ -6,13 +6,13 @@
 
 SimOS::SimOS(int numberOfDisks, unsigned long long amountOfRAM, unsigned int pageSize)
         : cpu(), memoryManager(amountOfRAM, pageSize), diskManager(numberOfDisks), processManager() {
-    std::cout << "SimOS initialized with " << numberOfDisks << " disks, " << amountOfRAM << " bytes of RAM, page size " << pageSize << " bytes." << std::endl;
+    //std::cout << "SimOS initialized with " << numberOfDisks << " disks, " << amountOfRAM << " bytes of RAM, page size " << pageSize << " bytes." << std::endl;
 }
 
 void SimOS::NewProcess() {
     int pid = processManager.createProcess();
     cpu.addProcess(pid);
-    std::cout << "New process created with PID " << pid << std::endl;
+    //std::cout << "New process created with PID " << pid << std::endl;
 }
 
 void SimOS::SimFork() {
@@ -21,7 +21,7 @@ void SimOS::SimFork() {
 
     int childPid = processManager.forkProcess(parentPid);
     cpu.addProcess(childPid);
-    std::cout << "Forked process " << childPid << " from parent " << parentPid << std::endl;
+    //std::cout << "Forked process " << childPid << " from parent " << parentPid << std::endl;
 }
 
 void SimOS::SimExit() {
@@ -31,7 +31,7 @@ void SimOS::SimExit() {
     processManager.terminateProcess(pid);
     memoryManager.releaseMemory(pid);
     cpu.removeCurrentProcess();
-    std::cout << "Process " << pid << " exited." << std::endl;
+    //std::cout << "Process " << pid << " exited." << std::endl;
     cpu.timerInterrupt();  // Ensure the next process is scheduled
 }
 
@@ -40,17 +40,17 @@ void SimOS::SimWait() {
     if (pid == NO_PROCESS) throw std::logic_error("CPU is idle");
 
     if (processManager.waitProcess(pid)) {
-        std::cout << "Process " << pid << " found and erased a zombie child process." << std::endl;
+        //std::cout << "Process " << pid << " found and erased a zombie child process." << std::endl;
     } else {
         cpu.removeCurrentProcess();
-        std::cout << "Process " << pid << " is waiting." << std::endl;
+        //std::cout << "Process " << pid << " is waiting." << std::endl;
     }
     cpu.timerInterrupt();  // Ensure the next process is scheduled
 }
 
 void SimOS::TimerInterrupt() {
     cpu.timerInterrupt();
-    std::cout << "Timer interrupt occurred." << std::endl;
+    //std::cout << "Timer interrupt occurred." << std::endl;
 }
 
 void SimOS::DiskReadRequest(int diskNumber, std::string fileName) {
@@ -59,7 +59,7 @@ void SimOS::DiskReadRequest(int diskNumber, std::string fileName) {
 
     diskManager.addRequest(diskNumber, pid, fileName);
     cpu.removeCurrentProcess();
-    std::cout << "Disk read request by PID " << pid << " for file " << fileName << " on disk " << diskNumber << std::endl;
+    //std::cout << "Disk read request by PID " << pid << " for file " << fileName << " on disk " << diskNumber << std::endl;
     cpu.timerInterrupt();  // Ensure the next process is scheduled
 }
 
@@ -67,7 +67,7 @@ void SimOS::DiskJobCompleted(int diskNumber) {
     int pid = diskManager.completeRequest(diskNumber);
     if (pid != NO_PROCESS) {
         cpu.addProcess(pid);
-        std::cout << "Disk job completed for PID " << pid << " on disk " << diskNumber << std::endl;
+        //std::cout << "Disk job completed for PID " << pid << " on disk " << diskNumber << std::endl;
     }
 }
 
@@ -76,8 +76,7 @@ void SimOS::AccessMemoryAddress(unsigned long long address) {
     if (pid == NO_PROCESS) throw std::logic_error("CPU is idle");
 
     memoryManager.accessMemory(pid, address);
-    std::cout << "Memory access by PID " << pid << " to address " << address << std::endl;
-    cpu.timerInterrupt();  // Ensure the next process is scheduled
+    //std::cout << "Memory access by PID " << pid << " to address " << address << std::endl;
 }
 
 int SimOS::GetCPU() {
@@ -99,3 +98,4 @@ FileReadRequest SimOS::GetDisk(int diskNumber) {
 std::deque<FileReadRequest> SimOS::GetDiskQueue(int diskNumber) {
     return diskManager.getRequestQueue(diskNumber);
 }
+

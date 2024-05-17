@@ -4,13 +4,13 @@
 
 
 ProcessManager::ProcessManager() : nextPID(1) {
-    std::cout << "ProcessManager initialized." << std::endl;
+    //std::cout << "ProcessManager initialized." << std::endl;
 }
 
 int ProcessManager::createProcess() {
     Process newProcess(nextPID, NO_PROCESS);
     processes[nextPID] = newProcess;
-    std::cout << "Created process with PID " << nextPID << std::endl;
+    //std::cout << "Created process with PID " << nextPID << std::endl;
     return nextPID++;
 }
 
@@ -21,14 +21,14 @@ int ProcessManager::forkProcess(int parentPID) {
     Process newProcess(nextPID, parentPID);
     processes[nextPID] = newProcess;
     processes[parentPID].childPIDs.push_back(nextPID);
-    std::cout << "Forked process with PID " << nextPID << " from parent " << parentPID << std::endl;
+    //std::cout << "Forked process with PID " << nextPID << " from parent " << parentPID << std::endl;
     return nextPID++;
 }
 
 void ProcessManager::terminateProcess(int pid) {
     auto processIt = processes.find(pid);
     if (processIt == processes.end()) {
-        std::cerr << "Error: Attempted to terminate a non-existent process " << pid << std::endl;
+        //std::cerr << "Error: Attempted to terminate a non-existent process " << pid << std::endl;
         throw std::logic_error("Process does not exist.");
     }
 
@@ -43,22 +43,22 @@ void ProcessManager::terminateProcess(int pid) {
     if (processIt->second.parentPID != NO_PROCESS && processes.find(processIt->second.parentPID) != processes.end() && processes[processIt->second.parentPID].isWaiting) {
         processes[processIt->second.parentPID].isWaiting = false;
         processes.erase(pid);
-        std::cout << "Parent " << processIt->second.parentPID << " was waiting. Erased process " << pid << std::endl;
+        //std::cout << "Parent " << processIt->second.parentPID << " was waiting. Erased process " << pid << std::endl;
     } else if (processIt->second.isZombie) {
         // If the process is already a zombie, just erase it
         processes.erase(pid);
-        std::cout << "Erased already zombie process " << pid << std::endl;
+        //std::cout << "Erased already zombie process " << pid << std::endl;
     } else {
         // Mark the process as a zombie if its parent is not waiting
         processIt->second.isZombie = true;
-        std::cout << "Marked process " << pid << " as zombie." << std::endl;
+        //std::cout << "Marked process " << pid << " as zombie." << std::endl;
     }
 }
 
 bool ProcessManager::waitProcess(int pid) {
     auto processIt = processes.find(pid);
     if (processIt == processes.end()) {
-        std::cerr << "Error: Attempted to wait on a non-existent process " << pid << std::endl;
+        //std::cerr << "Error: Attempted to wait on a non-existent process " << pid << std::endl;
         throw std::logic_error("Process does not exist.");
     }
 
@@ -68,7 +68,7 @@ bool ProcessManager::waitProcess(int pid) {
         if (childIt != processes.end() && childIt->second.isZombie) {
             processes.erase(childPID);
             foundZombie = true;
-            std::cout << "Erased zombie child process " << childPID << std::endl;
+            //std::cout << "Erased zombie child process " << childPID << std::endl;
             break;
         }
     }
@@ -77,7 +77,7 @@ bool ProcessManager::waitProcess(int pid) {
         return true;
     } else {
         processIt->second.isWaiting = true;
-        std::cout << "Process " << pid << " is waiting for its child processes." << std::endl;
+        //std::cout << "Process " << pid << " is waiting for its child processes." << std::endl;
         return false;
     }
 }
