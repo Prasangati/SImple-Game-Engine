@@ -135,13 +135,13 @@ namespace Ultimate {
 
     void ShaderOpenGL::SetUniform2Ints(std::string &&uniformName, int val1, int val2) {
         glUseProgram(mShaderProg);
-        GLuint location{glGetUniformLocation(mShaderProg, uniformName.c_str())};
+        GLint location{glGetUniformLocation(mShaderProg, uniformName.c_str())};
         glUniform2i(location, val1, val2);
     }
 
     void ShaderOpenGL::SetUniform2Ints(const std::string &uniformName, int val1, int val2) {
         glUseProgram(mShaderProg);
-        GLuint location{glGetUniformLocation(mShaderProg, uniformName.c_str())};
+        GLint location{glGetUniformLocation(mShaderProg, uniformName.c_str())};
         glUniform2i(location, val1, val2);
     }
 }
