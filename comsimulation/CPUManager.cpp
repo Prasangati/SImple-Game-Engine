@@ -5,6 +5,7 @@
 #include "CPUManager.h"
 #include <iostream>
 
+
 CPUManager::CPUManager() : currentProcess(NO_PROCESS) {
     //std::cout << "CPU Manager initialized with no current process." << std::endl;
 }
@@ -52,6 +53,7 @@ int CPUManager::getCurrentProcess() const {
 std::deque<int> CPUManager::getReadyQueue() const {
     return readyQueue;
 }
+
 
 
 

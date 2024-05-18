@@ -11,8 +11,7 @@
 #include "DiskManager.h"
 #include "ProcessManager.h"
 #include "utility.h"
-
-
+#include <iostream>
 
 class SimOS {
 public:
