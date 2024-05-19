@@ -1,9 +1,8 @@
 //
-// Created by Prasanga Tiwari on 5/17/24.
+// Created by Prasanga Tiwari on 5/02/24.
 //
 
 #include "DiskManager.h"
-#include <iostream>
 
 DiskManager::DiskManager(int numberOfDisks) : diskQueues(numberOfDisks) {
     //std::cout << "DiskManager initialized with " << numberOfDisks << " disks." << std::endl;

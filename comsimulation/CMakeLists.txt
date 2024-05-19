@@ -1,18 +1,24 @@
-cmake_minimum_required(VERSION 3.28)
+# Minimum CMake version required
+cmake_minimum_required(VERSION 3.27)
+
+# Project name
 project(comsimulation)
 
-set(CMAKE_CXX_STANDARD 20)
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Add the executable and include source files
 add_executable(comsimulation
-        SimOS.cpp
-        SimOS.h
+        main.cpp
         CPUManager.cpp
-        CPUManager.h
-        MemoryManager.cpp
-        MemoryManager.h
         DiskManager.cpp
-        DiskManager.h
-        utility.h
+        MemoryManager.cpp
         ProcessManager.cpp
-        ProcessManager.h
 )
+
+# Add include directories if needed
+target_include_directories(comsimulation PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# If you have any specific libraries to link, you can add them here
+# target_link_libraries(SimOS PRIVATE some_library)
