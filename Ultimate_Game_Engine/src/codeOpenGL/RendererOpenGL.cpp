@@ -14,6 +14,7 @@ Ultimate::RendererOpenGL::RendererOpenGL() {
         return;
     }
 
+    mShaderPtr = std::unique_ptr<Shader>{new Shader{"../Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl", "../Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl"}};
     /// Blending ///
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -30,10 +31,10 @@ void Ultimate::RendererOpenGL::Draw(Ultimate::Image &pic, int x, int y) {
     glBindVertexArray(VAO);
 
     float vertices[] = {
-            x, y, 0.0, 0.0,
-            x+pic.GetWidth(), y, 1.0, 0.0,
-            x, y + pic.GetHeight(), 0.0, 1.0,
-            x+ pic.GetHeight(), y + pic.GetHeight(), 1.0, 1.0
+            static_cast<float>(x), static_cast<float>(y), 0.0f, 0.0f,
+            static_cast<float>(x + pic.GetWidth()), static_cast<float>(y), 1.0f, 0.0f,
+            static_cast<float>(x), static_cast<float>(y + pic.GetHeight()), 0.0f, 1.0f,
+            static_cast<float>(x + pic.GetWidth()), static_cast<float>(y + pic.GetHeight()), 1.0f, 1.0f
     };
 
     unsigned int indices[] = {
@@ -56,8 +57,8 @@ void Ultimate::RendererOpenGL::Draw(Ultimate::Image &pic, int x, int y) {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    mDefaultShader.Bind();
-    mDefaultShader.SetUniform2Ints("ScreenSize",UltimateWindow::GetWindow()->GetWidth(),UltimateWindow::GetWindow()->GetHeight());
+    mShaderPtr->Bind();
+    mShaderPtr->SetUniform2Ints("ScreenSize",UltimateWindow::GetWindow()->GetWidth(),UltimateWindow::GetWindow()->GetHeight());
     glBindVertexArray(VAO);
     pic.Bind();
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -67,13 +68,14 @@ void Ultimate::RendererOpenGL::Draw(Ultimate::Image &pic, Ultimate::Shader &shad
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
-
     float vertices[] = {
-            x, y, 0.0, 0.0,
-            x+pic.GetWidth(), y, 1.0, 0.0,
-            x, y + pic.GetHeight(), 0.0, 1.0,
-            x+ pic.GetHeight(), y + pic.GetHeight(), 1.0, 1.0
+            static_cast<float>(x), static_cast<float>(y), 0.0f, 0.0f,
+            static_cast<float>(x + pic.GetWidth()), static_cast<float>(y), 1.0f, 0.0f,
+            static_cast<float>(x), static_cast<float>(y + pic.GetHeight()), 0.0f, 1.0f,
+            static_cast<float>(x + pic.GetWidth()), static_cast<float>(y + pic.GetHeight()), 1.0f, 1.0f
     };
+
+
 
     unsigned int indices[] = {
             0, 1, 2,

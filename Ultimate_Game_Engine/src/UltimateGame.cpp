@@ -24,9 +24,10 @@ namespace Ultimate{
     }
 
     void UltimateGame::Run() {
-        Renderer::Init();
         UltimateWindow::Init();
         UltimateWindow::GetWindow()->Create(1000, 800);
+        Renderer::Init();
+
 
         /// Shaders //
         Shader sProg("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl","/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl");

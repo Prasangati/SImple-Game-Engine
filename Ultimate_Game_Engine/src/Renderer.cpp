@@ -29,4 +29,13 @@ namespace Ultimate{
 
     }
 
+    Renderer::Renderer() {
+#ifdef ULTIMATE_OPENGL
+        mImplementation = std::unique_ptr<RendererImplement>{new RendererOpenGL};
+
+#else
+#error "only openGl is supoorted so far"
+#endif
+    }
+
 }

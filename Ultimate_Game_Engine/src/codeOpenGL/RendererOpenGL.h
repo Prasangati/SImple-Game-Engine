@@ -13,13 +13,12 @@ namespace Ultimate{
         RendererOpenGL();
         ~RendererOpenGL();
         virtual void Draw(Image& pic, int x, int y) override;
-        virtual void Draw(Image& pic,Shader& shader ,int x, int y) override;
+        virtual void Draw(Image& pic, Shader& shader ,int x, int y) override;
         virtual void ClearScreen() override;
 
 
     private:
-        Shader mDefaultShader{"../Assets/Shaders/DefaultVertexShader.glsl", "../Assets/Shaders/DefaultFragmentShader.glsl"};
-
+        std::unique_ptr<Shader> mShaderPtr;
     };
 }
 
