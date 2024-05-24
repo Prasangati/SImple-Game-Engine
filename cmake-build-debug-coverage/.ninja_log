@@ -1,11 +1,11 @@
 # ninja log v5
 1009	1172	1715570343594487179	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Image.cpp.o	c013637b8e270b3f
-42	516	1715574826223572571	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateGame.cpp.o	84b2a088c98d86d2
-39	351	1715572828600345960	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ShaderOpenGL.cpp.o	f38f2831d97e83b8
+38	424	1715708425194842230	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateGame.cpp.o	84b2a088c98d86d2
+13	347	1715711773519231771	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ShaderOpenGL.cpp.o	f38f2831d97e83b8
 47	344	1714961096779238364	glad/CMakeFiles/glad.dir/src/glad.c.o	e9e1b34bc233790e
 37	1006	1715570343429290647	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/cmake_pch_arm64.hxx.pch	e22233b80f1842fd
 1012	1203	1715570343618767209	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ImageOpenGL.cpp.o	3337c2a6bca0abc5
-1007	1186	1715570343611051586	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeGLFW/WindowGLFW.cpp.o	e8c1db8a95ebc735
+12	101	1715711781401863230	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeGLFW/WindowGLFW.cpp.o	e8c1db8a95ebc735
 771	1159	1713852016300866994	glfw/src/CMakeFiles/glfw.dir/null_window.c.o	b0cfbb1db124084c
 42	502	1715574826212305283	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/ShaderImplement.cpp.o	360cca38f655fb3a
 344	479	1714961096916873000	glad/libglad.a	afb0b60e85a5a323
@@ -15,8 +15,8 @@
 1160	1820	1713852016953353148	glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o	4c8aa2382586e76a
 48	640	1714961097072681067	stbi/CMakeFiles/stbi.dir/src/stb_image.cpp.o	8b49637a2d32cb82
 1271	1935	1713852017074657917	glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o	ddf218ac0b4d8740
-43	506	1715574826215623807	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o	bf86ecd0d042e963
-1007	1185	1715570343608525975	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateWindow.cpp.o	bba2809912100215
+59	486	1715707456782674090	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o	bf86ecd0d042e963
+58	485	1715707456782673839	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateWindow.cpp.o	bba2809912100215
 1009	1271	1713852016413723337	glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o	bc58d1d780f7ecd
 1083	1824	1713852016958442529	glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o	c6e94099b92b843a
 351	514	1715572828761517921	Ultimate_Game_Engine/libUltimate_Game_Engine.dylib	e4f9a2aef79eb8eb
@@ -33,16 +33,11 @@
 678	1082	1713852016224520694	glfw/src/CMakeFiles/glfw.dir/window.c.o	337ae324adb2bc30
 694	1021	1713852016161637786	glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o	581f8d1a5fdb6142
 679	972	1713852016113759895	glfw/src/CMakeFiles/glfw.dir/egl_context.c.o	f2fd686e80f6ba9c
+40	424	1715708425194202771	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Renderer.cpp.o	7ba3e04042d9efb1
 38	909	1715570343329721206	S24_Prasanga_Tiwari/CMakeFiles/S24_Prasanga_Tiwari.dir/source.cpp.o	d11e7fcdfbe909d7
 1	771	1713852015909996819	glfw/src/CMakeFiles/glfw.dir/input.c.o	d8d9807b6aa4efaf
 2	676	1713852015813424829	glfw/src/CMakeFiles/glfw.dir/platform.c.o	e5f09d75870d4ae9
 0	687	1713852015828596139	glfw/src/CMakeFiles/glfw.dir/context.c.o	f281b2cfb0caa75d
-2	91	1715618691690322806	build.ninja	71d09f86835666f7
+2	91	1716516959507605248	build.ninja	71d09f86835666f7
 687	1008	1713852016150076397	glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o	1230c4e0bcb5b0ea
 1285	1823	1713852016951145146	glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o	715982e3b0cc9883
-58	485	1715707456782673839	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateWindow.cpp.o	bba2809912100215
-59	486	1715707456782674090	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Shader.cpp.o	bf86ecd0d042e963
-40	424	1715708425194202771	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/Renderer.cpp.o	7ba3e04042d9efb1
-38	424	1715708425194842230	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/UltimateGame.cpp.o	84b2a088c98d86d2
-13	347	1715711773519231771	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeOpenGL/ShaderOpenGL.cpp.o	f38f2831d97e83b8
-12	101	1715711781401863230	Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir/src/codeGLFW/WindowGLFW.cpp.o	e8c1db8a95ebc735
