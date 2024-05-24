@@ -30,9 +30,9 @@ namespace Ultimate{
 
 
         /// Shaders //
-        Shader sProg("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl","/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl");
+        Shader sProg("../Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl","/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl");
         ////// Texture /////
-        Ultimate::Image pic("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/Test.png");
+        Ultimate::Image pic("../Ultimate_Game_Engine/Assets/Textures/Test.png");
 
         Initialize();
 
