@@ -5,6 +5,6 @@
 -- GLFW include directory: /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/glfw/include
 -- STB Image include directory: /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/stbi/include
 -- GLAD include directory: /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/glad/include
--- Configuring done (0.1s)
+-- Configuring done (0.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage

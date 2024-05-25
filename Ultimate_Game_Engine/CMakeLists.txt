@@ -15,30 +15,32 @@ set(SOURCE_FILES
         src/codeOpenGL/ShaderOpenGL.cpp
         src/codeOpenGL/ImageOpenGL.cpp
         src/Renderer.cpp
-        src/Renderer.h
         src/codeOpenGL/RendererOpenGL.cpp
-        src/codeOpenGL/RendererOpenGL.h
+        src/UltimateEvents.cpp
+        src/Unit.cpp
 )
 
 set(HEADER_FILES
         include/Ultimate.h
         src/UltimateGame.h
         src/codeGLFW/WindowGLFW.h
-        src/Utility.h
+        src/utility.h
         src/UltimateWindow.h
         src/WindowImpl.h
-        src/codeGLFW/WindowGLFW.h
         src/pch.h
         src/Image.h
         src/ImageImplement.h
         src/Shader.h
         src/ShaderImplement.h
         src/codeOpenGL/ShaderOpenGL.h
-        src/Renderer.cpp
         src/Renderer.h
         src/RendererImplement.h
-        src/codeOpenGL/RendererOpenGL.cpp
         src/codeOpenGL/RendererOpenGL.h
+        src/UltimateEvents.h
+        src/UltimateKeys.h
+        src/Unit.h
+        src/codeOpenGL/ImageOpenGL.h
+
 )
 
 # Define the Ultimate_Game_Engine as a shared library

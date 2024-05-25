@@ -56,4 +56,17 @@ namespace Ultimate {
     void UltimateWindow::PollEvents() {
         mWindow->PollEvents();
     }
+
+    void UltimateWindow::SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc) {
+        mWindow->SetKeyPressedCallback(callbackFunc);
+    }
+
+    void UltimateWindow::SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc) {
+        mWindow->SetKeyReleasedCallback(callbackFunc);
+    }
+
+    void UltimateWindow::SetWindowCloseCallback(std::function<void()> callbackFunc) {
+        mWindow->SetWindowCloseCallback(callbackFunc);
+    }
+
 }

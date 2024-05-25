@@ -4,7 +4,7 @@
 
 #ifndef S24_PRASANGA_TIWARI_WINDOWIMPL_H
 #define S24_PRASANGA_TIWARI_WINDOWIMPL_H
-
+#include "UltimateEvents.h"
 namespace Ultimate {
 
     class WindowImpl {
@@ -17,6 +17,12 @@ namespace Ultimate {
         virtual int GetHeight() const = 0;
         virtual bool IsValid()const = 0;
         virtual void glfeveninfo() const = 0;
+
+        virtual void SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc) =0;
+        virtual void SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc) =0;
+        virtual void SetWindowCloseCallback(std::function<void()> callbackFunc) =0;
+
+
         virtual ~WindowImpl() {};
 
     };

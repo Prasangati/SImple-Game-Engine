@@ -14,7 +14,7 @@ Ultimate::RendererOpenGL::RendererOpenGL() {
         return;
     }
 
-    mShaderPtr = std::unique_ptr<Shader>{new Shader{"../Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl", "../Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl"}};
+    mShaderPtr = std::unique_ptr<Shader>{new Shader{"/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl", "/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl"}};
     /// Blending ///
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

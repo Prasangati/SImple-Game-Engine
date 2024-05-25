@@ -4,9 +4,12 @@
 
 #ifndef S24_PRASANGA_TIWARI_WINDOWGLFW_H
 #define S24_PRASANGA_TIWARI_WINDOWGLFW_H
+#include "pch.h"
 #include "../WindowImpl.h"
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
+#include "UltimateEvents.h"
+
 namespace Ultimate {
 
     class WindowGLFW : public WindowImpl {
@@ -19,11 +22,23 @@ namespace Ultimate {
         virtual int GetHeight() const override;
         virtual bool IsValid() const override;
         virtual void glfeveninfo() const override;
-        ~WindowGLFW();
+
+        virtual void SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc) override;
+        virtual void SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc) override;
+        virtual void SetWindowCloseCallback(std::function<void()> callbackFunc) override;
+
+        ~WindowGLFW() override;
+
     private:
-        GLFWwindow* mWindow{nullptr};
+        struct Callbacks {
+            std::function<void(const KeyPressed&)> keyPressedFunc{ [] (const KeyPressed&){} };
+            std::function<void(const KeyReleased&)> keyReleasedFunc{ [] (const KeyReleased&){} };
+            std::function<void()> windowCloseFunc{ [] () {} };
+        } mCallbacks;
+
+        GLFWwindow* mWindow{ nullptr };
     };
 
-} // Ultimate
+}
 
 #endif //S24_PRASANGA_TIWARI_WINDOWGLFW_H

@@ -60,7 +60,7 @@ ImageOpenGL::ImageOpenGL(const std::string& filePath){
     }
 
     int ImageOpenGL::GetHeight() const{
-
+        return mHeight;
     }
 
     void ImageOpenGL::Bind() const {
