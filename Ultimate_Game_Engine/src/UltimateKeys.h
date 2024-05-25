@@ -129,7 +129,7 @@
     #define ULTIMATE_KEY_RIGHT_SUPER        347
     #define ULTIMATE_KEY_MENU               348
 #else
-#error "GLFW window implementation is missing"
+//    #error "GLFW window implementation is missing"
 #endif
 
 #endif //YOURPROJECTNAME_ULTIMATEKEYS_H

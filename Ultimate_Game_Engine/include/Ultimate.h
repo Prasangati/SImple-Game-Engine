@@ -2,8 +2,9 @@
 // Created by Prasanga Tiwari on 2/26/24.
 //
 
-#ifndef S24_PRASANGA_TIWARI_SOLUTION_SUN_H
-#define S24_PRASANGA_TIWARI_SOLUTION_SUN_H
+#ifndef S24_PRASANGA_TIWARI_SOLUTION_ULTIMATE_H
+#define S24_PRASANGA_TIWARI_SOLUTION_ULTIMATE_H
+
 #include "../src/utility.h"
 #include "../src/UltimateGame.h"
 #include "../src/UltimateWindow.h"
@@ -14,5 +15,5 @@
 #include "../src/Unit.h"
 #include "../src/UltimateKeys.h"
 
+#endif // S24_PRASANGA_TIWARI_SOLUTION_ULTIMATE_H
 
-#endif //S24_PRASANGA_TIWARI_SOLUTION_SUN_H

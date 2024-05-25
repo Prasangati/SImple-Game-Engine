@@ -40,7 +40,6 @@ set(HEADER_FILES
         src/UltimateKeys.h
         src/Unit.h
         src/codeOpenGL/ImageOpenGL.h
-
 )
 
 # Define the Ultimate_Game_Engine as a shared library
@@ -78,6 +77,8 @@ if(MSVC)
 else()
     target_compile_options(Ultimate_Game_Engine PRIVATE -Wall -Wextra)
 endif()
+
+# Copy assets to the binary directory
 file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Ultimate)
 file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug/Ultimate)
 file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release/Ultimate)
