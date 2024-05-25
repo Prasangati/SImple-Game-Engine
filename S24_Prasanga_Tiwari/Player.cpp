@@ -5,12 +5,16 @@
 #include "Player.h"
 
 Player::Player(const std::string& imagePath, int x, int y)
-        : Ultimate::Unit(imagePath, x, y) {}
+        : mUnit(imagePath, x, y) {}
 
 void Player::MoveLeft() {
-    UpdateXCoord(-5);
+    mUnit.UpdateXCoord(-5);
 }
 
 void Player::MoveRight() {
-    UpdateXCoord(5);
+    mUnit.UpdateXCoord(5);
+}
+
+Ultimate::Unit& Player::GetUnit() {
+    return mUnit;
 }

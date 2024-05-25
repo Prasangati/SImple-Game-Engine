@@ -78,7 +78,8 @@ else()
     target_compile_options(Ultimate_Game_Engine PRIVATE -Wall -Wextra)
 endif()
 
-# Copy assets to the binary directory
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Ultimate)
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug/Ultimate)
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release/Ultimate)
+# Custom target to copy assets
+add_custom_target(copy_assets ALL
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/Assets ${CMAKE_BINARY_DIR}/Assets
+)

@@ -40,6 +40,7 @@
 /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/glfw/docs/CMakeFiles/install/local.dir
 /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/glfw/docs/CMakeFiles/install/strip.dir
 /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/Ultimate_Game_Engine.dir
+/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/copy_assets.dir
 /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/edit_cache.dir
 /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/rebuild_cache.dir
 /Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/cmake-build-debug-coverage/Ultimate_Game_Engine/CMakeFiles/list_install_components.dir

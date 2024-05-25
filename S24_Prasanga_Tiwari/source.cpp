@@ -3,10 +3,13 @@
 #include "Player.h"
 #include <memory>
 
+
 class MyGame : public Ultimate::UltimateGame {
 public:
     void Initialize() override {
         player = std::make_unique<Player>("Assets/Textures/player.png", 500, 400);
+        background = std::make_unique<Ultimate::Image>("Assets/Textures/background.jpg");
+
         SetKeyPressedCallback([this](const Ultimate::KeyPressed& event) {
             OnKeyPressed(event);
         });
@@ -23,13 +26,15 @@ public:
             player->MoveRight();
         }
 
-        Ultimate::Renderer::Draw(*player);
+        Ultimate::Renderer::Draw(*background, 0, 0);  // Draw background first
+        Ultimate::Renderer::Draw(player->GetUnit());  // Draw player on top
     }
 
     void ShutDown() override {}
 
 private:
     std::unique_ptr<Player> player;
+    std::unique_ptr<Ultimate::Image> background;
     bool movingLeft{false};
     bool movingRight{false};
 

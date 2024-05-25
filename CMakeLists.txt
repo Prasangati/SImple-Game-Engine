@@ -22,6 +22,6 @@ message(STATUS "STB Image include directory: ${PROJECT_SOURCE_DIR}/stbi/include"
 message(STATUS "GLAD include directory: ${PROJECT_SOURCE_DIR}/glad/include")
 
 # Copy assets to the binary directory
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR})
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug)
-file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Assets DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Assets DESTINATION ${CMAKE_BINARY_DIR}/Debug)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Assets DESTINATION ${CMAKE_BINARY_DIR}/Release)
