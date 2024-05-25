@@ -1,15 +1,14 @@
-#include <iostream>
 #include "Ultimate.h"
 #include "Player.h"
-#include <memory>
 
+#include <iostream>
+#include <filesystem> // C++17
 
 class MyGame : public Ultimate::UltimateGame {
 public:
     void Initialize() override {
         player = std::make_unique<Player>("Assets/Textures/player.png", 500, 400);
         background = std::make_unique<Ultimate::Image>("Assets/Textures/background.jpg");
-
         SetKeyPressedCallback([this](const Ultimate::KeyPressed& event) {
             OnKeyPressed(event);
         });
@@ -26,8 +25,7 @@ public:
             player->MoveRight();
         }
 
-        Ultimate::Renderer::Draw(*background, 0, 0);  // Draw background first
-        Ultimate::Renderer::Draw(player->GetUnit());  // Draw player on top
+        Ultimate::Renderer::GetInstance()->Draw(player->GetUnit());
     }
 
     void ShutDown() override {}
@@ -57,8 +55,13 @@ private:
     }
 };
 
+int main() {
+    std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
+
+    MyGame game;
+    game.Run();
+
+    return 0;
+}
 
 
-
-
-START_GAME(MyGame)

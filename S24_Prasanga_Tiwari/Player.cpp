@@ -1,7 +1,6 @@
 //
 // Created by Prasanga Tiwari on 5/25/24.
 //
-
 #include "Player.h"
 
 Player::Player(const std::string& imagePath, int x, int y)
