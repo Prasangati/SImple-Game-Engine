@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Set a global output directory for all binaries
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 
 # Include the glad library
@@ -31,3 +31,7 @@ set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT S
 message(STATUS "GLFW include directory: ${PROJECT_SOURCE_DIR}/glfw/include")
 message(STATUS "STB Image include directory: ${PROJECT_SOURCE_DIR}/stbi/include")
 message(STATUS "GLAD include directory: ${PROJECT_SOURCE_DIR}/glad/include")
+
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR})
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug)
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release)

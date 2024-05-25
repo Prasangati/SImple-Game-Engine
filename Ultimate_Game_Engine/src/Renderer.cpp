@@ -38,4 +38,8 @@ namespace Ultimate{
 #endif
     }
 
+    void Renderer::Draw(Unit &unit) {
+        mInstance->mImplementation->Draw(unit.mImage, unit.mXPosition, unit.mYPosition);
+    }
+
 }

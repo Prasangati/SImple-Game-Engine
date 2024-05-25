@@ -10,7 +10,7 @@
 
 #include "utility.h"
 #include "Image.h"
-
+#include "Renderer.h"
 namespace Ultimate {
     class ULTIMATE_API Unit {
             public:
@@ -32,6 +32,7 @@ namespace Ultimate {
             int mYPosition;
 
             friend ULTIMATE_API bool UnitsOverlap(const Unit& a, const Unit& b);
+            friend class Renderer;
     };
 
     ULTIMATE_API bool UnitsOverlap(const Unit& a, const Unit& b);

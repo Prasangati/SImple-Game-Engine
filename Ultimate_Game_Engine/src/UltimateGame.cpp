@@ -12,6 +12,15 @@
 #include "UltimateKeys.h"
 namespace Ultimate{
 
+    UltimateGame::UltimateGame() {
+        UltimateWindow::Init();
+        UltimateWindow::GetWindow()->Create(1000,800);
+
+        Renderer::Init();
+        SetWindowCloseCallback([this]() {DefaultWindowCloseHandler();});
+
+    }
+
     void UltimateGame::Initialize() {
     }
 
@@ -24,33 +33,16 @@ namespace Ultimate{
     }
 
     void UltimateGame::Run() {
-        UltimateWindow::Init();
-        UltimateWindow::GetWindow()->Create(1000, 800);
-        Renderer::Init();
-
-        // Shaders
-        Shader sProg("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl",
-                     "/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl");
-
-        // Texture
-        Ultimate::Image pic("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/ok.png");
 
         Initialize();
 
         // Initialize mNextFrameTime
         mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
-        int x {50};
-        SetKeyPressedCallback([&x](const KeyPressed& event){
-            if(event.GetKeyCode() == ULTIMATE_KEY_RIGHT)
-                x += 50;
-        });
-
-        while (true) {
+        while (mShouldContinue) {
             Renderer::ClearScreen();
             OnUpdate();
 
-            Renderer::Draw(pic, x, 100);
             //x += 2;
 
             // Sleep until the next frame time
@@ -77,6 +69,10 @@ namespace Ultimate{
 
     void UltimateGame::SetKeyReleasedCallback(const std::function<void(const KeyReleased&)>& callbackFunc) {
         UltimateWindow::GetWindow()->SetKeyReleasedCallback(callbackFunc);
+    }
+
+    void UltimateGame::DefaultWindowCloseHandler() {
+        mShouldContinue = false;
     }
 
 
