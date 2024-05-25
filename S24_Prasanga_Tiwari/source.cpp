@@ -7,8 +7,8 @@
 class MyGame : public Ultimate::UltimateGame {
 public:
     void Initialize() override {
-        player = std::make_unique<Player>("Assets/Textures/player.png", 500, 400);
-        background = std::make_unique<Ultimate::Image>("Assets/Textures/background.jpg");
+        player = std::make_unique<Player>("../Assets/Textures/player.png", 500, 400);
+        background = std::make_unique<Ultimate::Image>("../Assets/Textures/background.png");
         SetKeyPressedCallback([this](const Ultimate::KeyPressed& event) {
             OnKeyPressed(event);
         });
