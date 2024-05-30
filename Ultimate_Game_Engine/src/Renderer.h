@@ -5,6 +5,7 @@
 #ifndef YOURPROJECTNAME_RENDERER_H
 #define YOURPROJECTNAME_RENDERER_H
 #include "pch.h"
+#include "Unit.h"
 #include "utility.h"
 #include "Image.h"
 #include "RendererImplement.h"
@@ -16,6 +17,7 @@ namespace Ultimate {
 
         static void Draw(Image& pic, int x, int y);
         static void Draw(Image& pic, Shader& shader,int x, int y);
+        static void Draw(Unit& unit);
         static void ClearScreen();
     private:
         std::unique_ptr<RendererImplement> mImplementation;

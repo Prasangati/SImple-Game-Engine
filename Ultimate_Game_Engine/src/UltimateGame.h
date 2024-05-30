@@ -11,6 +11,8 @@ constexpr int ULTIMATE_FRAME_RATE{60};
 namespace Ultimate {
     class  UltimateGame {
     public:
+        UltimateGame();
+
         virtual void Initialize();
         virtual void OnUpdate();
         virtual void ShutDown();
@@ -21,11 +23,15 @@ namespace Ultimate {
         void SetKeyReleasedCallback(const std::function<void(const KeyReleased&)>& callbackFunc);
         void SetWindowCloseCallback(const std::function<void()>& callbackFunc);
 
+        void DefaultWindowCloseHandler();
+
 
 
     private:
         std::chrono::steady_clock::time_point mNextFrameTime;
         std::chrono::milliseconds mFrameDuration{1000 / ULTIMATE_FRAME_RATE};
+
+        bool mShouldContinue{true};
     };
 
 

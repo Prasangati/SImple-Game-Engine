@@ -40,7 +40,6 @@ set(HEADER_FILES
         src/UltimateKeys.h
         src/Unit.h
         src/codeOpenGL/ImageOpenGL.h
-
 )
 
 # Define the Ultimate_Game_Engine as a shared library
