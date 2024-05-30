@@ -29,21 +29,22 @@ namespace Ultimate{
         Renderer::Init();
 
         // Shaders
-        Shader sProg("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultVertexShader.glsl",
-                     "/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Shaders/DefaultFragmentShader.glsl");
-
         // Texture
-        Ultimate::Image pic("/Users/prasangatiwari/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/ok.png");
+        Ultimate::Image pic("/Users/soleilrosado/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/scope.jpg");
 
         Initialize();
 
         // Initialize mNextFrameTime
         mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
-        int x {50};
+        int x {0};
         SetKeyPressedCallback([&x](const KeyPressed& event){
             if(event.GetKeyCode() == ULTIMATE_KEY_RIGHT)
                 x += 50;
+
+            if(event.GetKeyCode() == ULTIMATE_KEY_LEFT)
+                x -= 50;
+
         });
 
         while (true) {
