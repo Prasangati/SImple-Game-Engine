@@ -4,19 +4,16 @@
 
 #include "Lives.h"
 
-Lives::Lives(int life):livesZero(false), lives(life), health("../Assets/Textures/healthy.png"){}
+Lives::Lives(int life):lives(life), health("../Assets/Textures/healthy.png"){}
 
 
 
 void Lives::DecreaseLife() {
     lives--;
-    if (lives == 0){
-        livesZero == true;
-    }
 }
 
-bool Lives::LifeZero() const {
-    return livesZero;
+bool Lives::lifeNotZero() const {
+    return lives>0;
 }
 
 Ultimate::Image &Lives::getImage()  {

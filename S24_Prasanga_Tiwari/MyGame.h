@@ -9,6 +9,7 @@
 #include "Lives.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 class MyGame : public Ultimate::UltimateGame {
 public:
@@ -24,13 +25,14 @@ private:
     Player bucket;
     Ultimate::Unit apple;
     Lives gameLife;
+    Ultimate::Image yourscore{"../Assets/Textures/Drawing.png"};
 
     int applesleft{10};
+    int score{0};
 
     bool movingLeft{false};
     bool movingRight{false};
 
-    int currentchange{0};
 
     bool noAppleDropping{true};
 

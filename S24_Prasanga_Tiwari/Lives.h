@@ -16,11 +16,10 @@ public:
 
     Ultimate::Image& getImage();
 
-    bool LifeZero() const;
+    bool lifeNotZero() const;
 
 
 private:
-    bool livesZero;
     int lives;
     Ultimate::Image health;
 };
