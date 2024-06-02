@@ -1,0 +1,4 @@
+In my game, I implemented a randomizer that randomizes the x position of the apple after it has fallen, whether it is caught
+by the bucket or not. I also drew hearts in the corner to represent the number of times the player has not been
+able to catch the apples. At the end, we get to see how many apples the player has caught, which is basically the number
+of apples that have fallen minus three since the game is over when you fail to catch it for the third time.

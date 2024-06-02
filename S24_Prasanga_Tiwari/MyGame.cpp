@@ -64,16 +64,16 @@ void MyGame::OnUpdate() {
         }
     }
     else{
-        Ultimate::Renderer::Draw(yourscore,200,200);
+        Ultimate::Renderer::Draw(yourscore,200,280);
 
         int startX = 175;
-        int y = 40;
+        int y = 85;
         int digitWidth = 80; //pixels between the digits
 
         std::string scoreStr = std::to_string(score);
         for (char digitChar : scoreStr) {
-            int digit = digitChar - '0'; // Convert char to int
-            Ultimate::Image image(imagePaths[digit]); // Create image for the digit
+            int digit = digitChar - '0';
+            Ultimate::Image image(imagePaths[digit]);
             Ultimate::Renderer::Draw(image, startX, y);
             startX += digitWidth; // Move to the next position
         }
