@@ -7,11 +7,13 @@ Player::Player(const std::string& imagePath, int x, int y)
         : mUnit(imagePath, x, y) {}
 
 void Player::MoveLeft() {
-    mUnit.UpdateXCoord(-5);
+    if (mUnit.GetXCoord()-10 > -5)
+        mUnit.UpdateXCoord(-15);
 }
 
 void Player::MoveRight() {
-    mUnit.UpdateXCoord(5);
+    if (mUnit.GetXCoord()+10 < 956)
+        mUnit.UpdateXCoord(15);
 }
 
 Ultimate::Unit& Player::GetUnit() {

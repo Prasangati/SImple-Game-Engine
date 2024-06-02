@@ -45,11 +45,31 @@ set(HEADER_FILES
 # Define the Ultimate_Game_Engine as a shared library
 add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES})
 
+
+target_compile_definitions(Ultimate_Game_Engine PRIVATE
+        PUBLIC
+            $<$<CONFIG:Debug>:ULTIMATE_DEBUG=2>
+            $<$<CONFIG:RelWithDebInfo>:ULTIMATE_DEBUG=1>
+
+        PRIVATE
+            ULTIMATE_OPENGL
+            ULTIMATE_EXPORTS
+            ULTIMATE_GLFW_WINDOW  # Define this to enable GLFW window implementation
+            ULTIMATE_LIB
+)
+
+# Compiler-specific options
+if(MSVC)
+    target_compile_options(Ultimate_Game_Engine PRIVATE /W4)
+else()
+    target_compile_options(Ultimate_Game_Engine PRIVATE -Wall -Wextra)
+endif()
+
+
 # Specify the directories where the compiler should look for headers
 target_include_directories(Ultimate_Game_Engine
-        PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
         PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/../glfw/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../glad/include
@@ -59,21 +79,10 @@ target_include_directories(Ultimate_Game_Engine
 # Enable precompiled headers
 target_precompile_headers(Ultimate_Game_Engine PRIVATE src/pch.h)
 
-# Definitions for controlling visibility and imports/exports
-target_compile_definitions(Ultimate_Game_Engine PRIVATE
-        ULTIMATE_OPENGL
-        ULTIMATE_EXPORTS
-        ULTIMATE_GLFW_WINDOW  # Define this to enable GLFW window implementation
-        $<$<CONFIG:Debug>:ULTIMATE_DEBUG=2>
-        $<$<CONFIG:RelWithDebInfo>:ULTIMATE_DEBUG=1>
-)
+
 
 # Link against GLFW and potentially other libraries
 target_link_libraries(Ultimate_Game_Engine PRIVATE glfw glad stbi)
 
-# Compiler-specific options
-if(MSVC)
-    target_compile_options(Ultimate_Game_Engine PRIVATE /W4)
-else()
-    target_compile_options(Ultimate_Game_Engine PRIVATE -Wall -Wextra)
-endif()
+
+
