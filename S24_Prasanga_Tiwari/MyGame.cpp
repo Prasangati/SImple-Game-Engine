@@ -68,7 +68,7 @@ void MyGame::OnUpdate() {
 
         int startX = 175;
         int y = 40;
-        int digitWidth = 80;
+        int digitWidth = 80; //pixels between the digits
 
         std::string scoreStr = std::to_string(score);
         for (char digitChar : scoreStr) {
