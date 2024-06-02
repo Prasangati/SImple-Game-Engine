@@ -6,8 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(S24_Prasanga_TiwariExecutable source.cpp Player.cpp
         MyGame.cpp
-        Lives.cpp
-        Lives.h)
+        Lives.cpp)
 
 target_include_directories(S24_Prasanga_TiwariExecutable PRIVATE
         ${CMAKE_SOURCE_DIR}/Ultimate_Game_Engine/include

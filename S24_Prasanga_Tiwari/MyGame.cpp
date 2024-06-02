@@ -19,6 +19,7 @@ void MyGame::Initialize() {
     SetKeyReleasedCallback([this](const Ultimate:: KeyReleased& event) {
         OnKeyReleased (event) ;
     }) ;
+    std::srand(std::time(0));
 }
 
 void MyGame::OnUpdate() {
@@ -33,9 +34,9 @@ void MyGame::OnUpdate() {
             x += 60;
         }
         if (noAppleDropping){
-            std::srand(std::time(0));
             int random_number = std::rand() % 1000; // Generates a number between 0 and 999
-            apple.UpdateXCoord(-apple.GetXCoord()+random_number);
+            apple.UpdateXCoord(-apple.GetXCoord());
+            apple.UpdateXCoord(random_number);
             apple.UpdateYCoord(600-apple.GetYCoord());
             noAppleDropping = false;
         }
