@@ -23,7 +23,7 @@ void MyGame::Initialize() {
 
 void MyGame::OnUpdate() {
     Ultimate::Renderer::Draw(background, 0, 0);
-    if (gameLife.lifeNotZero() && applesleft > 0){
+    if (gameLife.lifeNotZero()){
         int current = 0;
         int x = 5;
         int y = 520;
@@ -33,7 +33,7 @@ void MyGame::OnUpdate() {
             x += 60;
         }
         if (noAppleDropping){
-            std::srand(std::time(0)); // Seed the random number generator
+            std::srand(std::time(0));
             int random_number = std::rand() % 1000; // Generates a number between 0 and 999
             apple.UpdateXCoord(-apple.GetXCoord()+random_number);
             apple.UpdateYCoord(600-apple.GetYCoord());
@@ -48,6 +48,7 @@ void MyGame::OnUpdate() {
             noAppleDropping = true;
             gameLife.DecreaseLife();
             applesleft --;
+
         }
         else{
             apple.UpdateYCoord(-8);
@@ -61,8 +62,25 @@ void MyGame::OnUpdate() {
             bucket.MoveLeft();
         }
     }
-    else
+    else{
         Ultimate::Renderer::Draw(yourscore,200,200);
+
+        int startX = 175;
+        int y = 40;
+        int digitWidth = 80;
+
+        std::string scoreStr = std::to_string(score);
+        for (char digitChar : scoreStr) {
+            int digit = digitChar - '0'; // Convert char to int
+            Ultimate::Image image(imagePaths[digit]); // Create image for the digit
+            Ultimate::Renderer::Draw(image, startX, y);
+            startX += digitWidth; // Move to the next position
+        }
+    }
+
+
+
+
 
 
     Ultimate::Renderer::Draw(bucket.GetUnit());

@@ -10,7 +10,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
+#include <vector>
+#include <string>
 class MyGame : public Ultimate::UltimateGame {
 public:
     MyGame();
@@ -29,6 +30,22 @@ private:
 
     int applesleft{10};
     int score{0};
+    std::vector<std::string> imagePaths = {
+            "../Assets/Textures/Drawing-0.png",
+            "../Assets/Textures/Drawing-1.png",
+            "../Assets/Textures/Drawing-2.png",
+            "../Assets/Textures/Drawing-3.png",
+            "../Assets/Textures/Drawing-4.png",
+            "../Assets/Textures/Drawing-5.png",
+            "../Assets/Textures/Drawing-6.png",
+            "../Assets/Textures/Drawing-7.png",
+            "../Assets/Textures/Drawing-8.png",
+            "../Assets/Textures/Drawing-9.png"
+    };
+
+
+
+
 
     bool movingLeft{false};
     bool movingRight{false};
