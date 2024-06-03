@@ -1,7 +1,4 @@
 #include "Ultimate.h"
-#include "Player.h"
-
-#include <iostream>
 #include "MyGame.h"
 
 

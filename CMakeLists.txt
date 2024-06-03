@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_subdirectory(glad)
 add_subdirectory(stbi)
 add_subdirectory(glfw)
-add_subdirectory(Ultimate_Game_Engine)
+add_subdirectory(Ultimate_Game)
 add_subdirectory(S24_Prasanga_Tiwari)
 
 
@@ -19,7 +19,7 @@ add_custom_target(copy_assets ALL
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/Assets ${CMAKE_BINARY_DIR}/Assets
 )
-add_dependencies(Ultimate_Game_Engine copy_assets)
+add_dependencies(Ultimate_Game copy_assets)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT S24_Prasanga_Tiwari)
 
 file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR})

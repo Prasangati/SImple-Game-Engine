@@ -1,5 +1,5 @@
 //
-// Created by Soleil Rosado on 6/1/24.
+// Created by Prasanga Tiwari on 5/4/24.
 //
 
 #ifndef PRASANGA_GAME_LIVES_H

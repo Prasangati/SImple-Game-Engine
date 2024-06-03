@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.27)
-project(Ultimate_Game_Engine CXX)
+project(Ultimate_Game CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Define source and header files for the Ultimate_Game_Engine
+# Define source and header files for the Ultimate_Game
 set(SOURCE_FILES
         src/UltimateGame.cpp
         src/UltimateWindow.cpp
@@ -42,11 +42,11 @@ set(HEADER_FILES
         src/codeOpenGL/ImageOpenGL.h
 )
 
-# Define the Ultimate_Game_Engine as a shared library
-add_library(Ultimate_Game_Engine SHARED ${SOURCE_FILES} ${HEADER_FILES})
+# Define the Ultimate_Game as a shared library
+add_library(Ultimate_Game SHARED ${SOURCE_FILES} ${HEADER_FILES})
 
 
-target_compile_definitions(Ultimate_Game_Engine PRIVATE
+target_compile_definitions(Ultimate_Game PRIVATE
         PUBLIC
             $<$<CONFIG:Debug>:ULTIMATE_DEBUG=2>
             $<$<CONFIG:RelWithDebInfo>:ULTIMATE_DEBUG=1>
@@ -60,14 +60,14 @@ target_compile_definitions(Ultimate_Game_Engine PRIVATE
 
 # Compiler-specific options
 if(MSVC)
-    target_compile_options(Ultimate_Game_Engine PRIVATE /W4)
+    target_compile_options(Ultimate_Game PRIVATE /W4)
 else()
-    target_compile_options(Ultimate_Game_Engine PRIVATE -Wall -Wextra)
+    target_compile_options(Ultimate_Game PRIVATE -Wall -Wextra)
 endif()
 
 
 # Specify the directories where the compiler should look for headers
-target_include_directories(Ultimate_Game_Engine
+target_include_directories(Ultimate_Game
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/src
@@ -77,12 +77,12 @@ target_include_directories(Ultimate_Game_Engine
 )
 
 # Enable precompiled headers
-target_precompile_headers(Ultimate_Game_Engine PRIVATE src/pch.h)
+target_precompile_headers(Ultimate_Game PRIVATE src/pch.h)
 
 
 
 # Link against GLFW and potentially other libraries
-target_link_libraries(Ultimate_Game_Engine PRIVATE glfw glad stbi)
+target_link_libraries(Ultimate_Game PRIVATE glfw glad stbi)
 
 
 

@@ -36,7 +36,7 @@ namespace Ultimate{
     void UltimateGame::Run() {
 
         // Texture
-        //Ultimate::Image pic("/Users/soleilrosado/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game_Engine/Assets/Textures/scope.jpg");
+        //Ultimate::Image pic("/Users/soleilrosado/CLionProjects/S24_Prasanga_Tiwari/Ultimate_Game/Assets/Textures/scope.jpg");
 
 
         Initialize();
