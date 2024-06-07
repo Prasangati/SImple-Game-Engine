@@ -1,7 +1,7 @@
 # 2D Game Engine
 
 ## Overview
-This project is a custom 2D game engine developed from scratch using C++ and OpenGL. It provides essential features such as rendering, texture management, shader handling, and window management. The engine is designed to be modular and extensible, making it easy to integrate into various 2D game projects.
+This project is a custom 2D game engine developed from scratch using C++ and OpenGL. It provides essential features such as rendering, texture management, shader handling, and window management. The engine is designed to be modular and extensible, making it easy to integrate into various 2D game projects. Keep in mind that the Ultimate_Game is the actual game engine, while simple_pong is the demo game created using the game engine. 
 
 ## Features
 - **Rendering System**: Efficient 2D rendering using OpenGL.
